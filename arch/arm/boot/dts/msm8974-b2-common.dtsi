@@ -36,6 +36,8 @@
 	};
 
         i2c@f9925000 {
+		#address-cells = <1>;
+		#size-cells = <0>;
                 nxp_pn544_nfc@28 {
                         compatible = "nxp,pn544-nfc";
                         reg = <0x28>;
@@ -287,7 +289,7 @@
 	headset_pmic {
 		compatible = "htc_headset,pmic";
 		interrupt-parent = <&msmgpio>;
-		hs_pmic,key_gpio 	= <&msmgpio 9 0x00>;
+		hs_pmic,key_gpio        = <&msmgpio 9 0x00>;
 		hs_pmic,driver_flag     = <4>;
 		hs_pmic,hpin_gpio       = <&msmgpio 65 0x00>;
 		hs_pmic,hpin_irq        = <>;
@@ -300,7 +302,7 @@
 		hs_pmic,adc_amux        = <0>;
 		hs_pmic,hs_controller   = <0>;
 		hs_pmic,hs_switch       = <0>;
-		qcom,headset-vadc 	= <&pm8941_vadc>;
+		qcom,headset-vadc       = <&pm8941_vadc>;
 	};
 
 	headset_onewire {
@@ -421,6 +423,8 @@
 	};
 
 	qcom,pm8941@1 {
+		#address-cells = <1>;
+		#size-cells = <0>;
 		qcom,vib@c000 {
 			status = "okay";
 			compatible = "qcom,qpnp-vibrator";
@@ -428,6 +432,7 @@
 			label = "vibrator";
 			qcom,qpnp-vib-timeout-ms = <15000>;
 			qcom,qpnp-vib-vtg-level-mV = <3100>;
+			qcom,qpnp-vib-vtg-min-mV = <1900>;
 		};
 	};
 

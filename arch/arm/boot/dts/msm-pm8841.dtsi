@@ -71,7 +71,7 @@
 		spmi-slave-container;
 		reg = <0x5>;
 		#address-cells = <1>;
-		#size-cells = <1>;
+		#size-cells = <0>;
 
 		regulator@1400 {
 			regulator-name = "8841_s1";
